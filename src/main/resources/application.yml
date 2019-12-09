@@ -1,0 +1,27 @@
+server:
+  port: 80
+
+spring:
+  mvc:
+    servlet:
+      load-on-startup: 1
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: root
+  thymeleaf:
+    cache: false
+    mode: HTML5
+    encoding: UTF-8
+
+logging:
+  level:
+   com.itlike: debug
+  path: "D:/代码文件夹/日志文件夹/test.log"
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.cwc.entity
+  configuration:
+    map-underscore-to-camel-case: true
