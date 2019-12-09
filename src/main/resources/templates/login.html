@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>撩课-后台管理系统</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet"  th:href="@{~/js/bootstrap/dist/css/bootstrap.css}">
+    <link rel="stylesheet"  th:href="@{~/css/font-awesome/css/font-awesome.css}">
+    <link rel="stylesheet" th:href="@{~/css/index.css}">
+    <script th:href="@{~/js/bootstrap/dist/js/bootstrap.js}"></script>
+    <script th:src="@{~/js/jquery/dist/jquery.js}"></script>
+
+
+
+<body>
+    <!-- 登录 -->
+    <div class="login">
+        <div class="login-wrap">
+            <div class="avatar">
+                <img th:src="@{/static/images/logo.jpg}" class="img-circle" alt="">
+            </div>
+            <form th:action="@{/userlogin}" method="post" class="col-md-offset-1 col-md-10">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">
+                        <i class="fa fa-id-card-o"></i>
+                    </span>
+                    <span th:text="${msg}" th:if="${not #strings.isEmpty(msg)}" style="color: red"></span>
+                    <input type="text" name="username" class="form-control" placeholder="用户名">
+                </div>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">
+                        <i class="fa fa-key"></i>
+                    </span>
+                    <input type="password" name="password" class="form-control" placeholder="密码">
+                </div>
+
+                <button type="submit" class="btn btn-lg btn-danger btn-block">登 录</button>
+                <a class="language">中文</a>|<a class="language">English</a>
+            </form>
+        </div>
+    </div>
+    
+
+</body>
+</html>
